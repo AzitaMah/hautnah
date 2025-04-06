@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+header {
+    position: relative;
+    min-height: 100vh; /* Mindesthöhe = Bildschirmhöhe */
+    overflow: hidden; /* Verhindert Scrollen bei großen Bildern */
+
+}
+.background-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei gleich große Spalten */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Hintergrund bleibt hinter dem Text */
+    background: rgb(0, 0, 0); /* Fallback-Hintergrund (für Ladezeit) */
+}
+
+
+  .img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;  /* Start als unsichtbar */
+    transform: scale(1.1);  /* Start mit leichtem Zoom */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Sanfter Übergang für das Ein- und Ausblenden und Zoom */
+  }
+  
+  img.active {
+    opacity: 1;  /* Bild sichtbar */
+    transform: scale(1);  /* Zoom wird entfernt */
+  }
+  
+  img.fade-out {
+    opacity: 0;  /* Bild wird unsichtbar */
+    transform: scale(1.1);  /* Zoom bleibt erhalten */
+  }
+  
+ 
+.img-wrapper::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        rgba(0, 0, 0, 0.1) 30%, 
+        rgba(0, 0, 0, 0.7) 100%
+
+    );
+    z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+    .background-grid {
+        grid-template-columns: 1fr; /* Eine Spalte = Bilder untereinander */
+        grid-template-rows: 1fr 1fr; /* Jedes Bild nimmt 50% der Höhe ein */
+    }
+}
+
+.header-content {
+    font-family: "Playfair Display", serif;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+h1{
+    font-size: 800%
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 300%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 200%; 
+    }
+}
+
+h1::first-letter{
+    color: #ff0073;
+   
+}
+
+
+h2{
+    font-size: 170%
+}
+
+@media (max-width:1024px){
+    h2{
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 80%; 
+    }
+}
+.logo-ampersand {
+    font-family: "Baskerville", serif; 
+    font-style: italic;
+}
+

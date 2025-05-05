@@ -128,7 +128,7 @@
       top: 0;
     }
     
-    .topnav.responsive a:not(.active):not(.icon) { /*Manu links balck exept of Menu icon*/
+    .topnav.responsive a:not(.active):not(.icon) { /*Menu links balck exept of Menu icon*/
       color: black;
     }
     .topnav.responsive a:hover:not(.active) {
@@ -170,6 +170,30 @@ header {
     background: rgb(255, 255, 255); /* Fallback-Hintergrund (für Ladezeit) */
 }
 
+.content-box {
+  background: white;
+  position: relative;
+  margin: 0 auto;     /* zentrieren */
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* optional: Schatten */
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .content-box {
+      max-width: 100%;
+      padding: 20px;
+  }
+}
+
+
+.line-seperator{
+  background:  #ff00840b;
+  position: relative;
+  margin: 0 auto;     /* zentrieren */
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* optional: Schatten */
+}
 
   .img-wrapper {
     position: relative;

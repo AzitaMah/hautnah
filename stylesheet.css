@@ -7,6 +7,11 @@
     box-sizing: border-box; 
 }
 
+/*Wiederkerende Werte*/
+:root {
+  --primary-color: #ff0084;
+}
+
 /* =========================================
    Navigationsleiste
 ========================================= */
@@ -35,18 +40,18 @@
   
   /* Highlight on Hover bei Desktioansicht */
   .topnav a.active {
-    background-color: #ff0084;
+    background-color: var(--primary-color);
     color: white;
   }
 
   /* Change the color of links on hover */
   .topnav a:hover {
     text-decoration: underline;
-    color: rgb(255, 0, 170);
+    color: var(--primary-color);
     
   }
   .topnav a.active:hover {
-    background-color: #ff0084;
+    background-color: var(--primary-color);
     color: black;
   }
   
@@ -84,16 +89,17 @@
 }
 
 .first-letter-nav-logo{
-    color: #ff0084; 
+    color: var(--primary-color); 
 }
 .logo-ampersand-nav-logo {
     font-family: "Baskerville", serif; 
     font-style: italic;
 }
 
-/* =========================================
-   Responsive Navigation (Mobile Ansicht)
-========================================= */
+
+
+/* ============ Aenderungen/Ergaenzungen Mobile Ansicht ============ */
+
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {
       display: none;
@@ -104,7 +110,7 @@
       display: block;
     }
     .topnav a.icon:hover {
-      color: #ff0084;}
+      color: var(--primary-color);}
 
     .header-content {
         display: none; 
@@ -137,7 +143,7 @@
       color: black;
     }
     .topnav.responsive a:hover:not(.active) {
-      color: #ff0084;
+      color: var(--primary-color);
       text-decoration: underline;
     }
     .topnav.responsive a {
@@ -161,8 +167,7 @@ header {
     position: relative;
     min-height: 100vh; /* Gesammte Bildschirmhöhe */
     overflow: hidden; /* Verhindert Scrollen bei großen Bildern */
-
-}
+  }
 
 .background-grid {
     display: grid;
@@ -225,14 +230,42 @@ img.fade-out {
     z-index: 1;
 }
 
-/* Responsive Hintergrundbild-Anordnung */
-@media (max-width: 768px) {
-    .background-grid {
-        grid-template-columns: 1fr; /* Eine Spalte = Bilder untereinander */
-        grid-template-rows: 1fr 1fr; /* Jedes Bild nimmt 50% der Höhe ein */
-    }
+.img-smal {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
 }
 
+/* ============ Aenderungen/Ergaenzungen Mobile Ansicht  ============ */
+@media (max-width: 600px) {
+  header {
+    min-height:  calc(100vh - 60px); /* Navigation abziehen */
+    height:  calc(100vh - 60px); /* Navigation abziehen */
+    overflow: hidden;
+  }
+
+  .img-smal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+  
+  .img-wrapper.mobile {
+    height: 100%;
+    position: relative;
+  }
+
+  .background-grid {
+    display: block !important; /* Grid komplett deaktivieren */
+    position: relative;
+    width: 100vw !important;
+    height: calc(100vh - 60px) !important;
+    background: rgb(255, 255, 255) !important;
+    overflow: hidden;
+  }
+}
 /* =========================================
    Header-Text (zentral)
 ========================================= */
@@ -316,6 +349,8 @@ img.fade-out {
   color: black;
 }
 
+/* ============ Aenderungen/Ergaenzungen Mobile Ansicht  ============ */
+
 @media (max-width: 600px) {
   .content-box {
       max-width: 100%;
@@ -323,9 +358,6 @@ img.fade-out {
   }
 }
 
-/* =========================================
-   Bildanzeige je nach Gerätetyp
-========================================= */
 .line-seperator{
   background:  #ff00840b;
   position: relative;
@@ -334,6 +366,9 @@ img.fade-out {
   box-shadow: 0 0 10px rgba(0,0,0,0.1); 
 }
 
+/* =========================================
+   Bildanzeige je nach Gerätetyp
+========================================= */
 .mobile {
   display: none;
 }

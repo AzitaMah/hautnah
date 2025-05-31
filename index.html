@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Responsive Design: Skaliert auf verschiedene Bildschirmgrößen -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>hautnah</title>
+
+        <title>hautnah Dessous und Bademode, Stuttgart</title>
+
         <link rel="stylesheet" href="./stylesheet.css">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
         <link rel="icon" href="./img/favicon.jpg" type="image/x-icon">
@@ -12,7 +15,7 @@
     </head>
     <body>
 
-        <!--Navigation-->
+        <!--Navigationsleiste-->
         <div class="topnav" id="myTopnav">
             <a href="#home" class="active">Home</a>
             <a href="#range">Sortiment</a>
@@ -21,42 +24,52 @@
             <a href="#brands">Marken</a>
             <a href="#contact">Kontakt</a>
 
-            <!-- Neues kleines Logo -->
+            <!--Kleines Logo für mobile Anischt -->
             <div class="nav-logo"> 
             <div class="nav-logo-title"><span class="first-letter-nav-logo">h</span>autnah</div>
             <div class="nav-logo-subtitle">Dessous <span class="logo-ampersand-nav-logo">&</span> Bademode</div>
             </div>
 
+            <!-- Hamburger-Menü für kleine Bildschirme -->
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
               <i class="fa fa-bars"></i>
             </a>
           </div>
 
-
+        <!-- Header-Bereich mit Titel & Bild-Slideshow -->
         <header>
+            <!-- Überschrift Desktopansicht / Logo groß in der Mitte -->
             <div class="header-content">
                 <h1><span class="first-letter">h</span>autnah</h1>
                 <h2>Dessous <span class="logo-ampersand">&</span> Bademode</h2>
             </div>
-
+            <!-- Bildbereich im Hintergrund -->
             <div class="background-grid">
-                <div class="img-wrapper">
+                <!--Desktopansicht: Zwei nebeneinanderliegende Bilder-->
+                <div class="img-wrapper desktop">
                     <img class="img-left" />
                   </div>
-                  <div class="img-wrapper">
+                  <div class="img-wrapper desktop">
                     <img class="img-right" />
+                  </div>
+                  <!--Mobile Ansicht: Ein einzelnes Bild -->
+                  <div class="img-wrapper mobile">
+                    <img class="img-smal">
                   </div>
             </div>
 
+             <!-- JavaScript für Bildwechsel / Navigation -->
             <script src="script.js" defer></script>
         </header>
 
+        <!-- Inhaltlicher Abschnitt -->
         <div class="content-box">
           <h2>Überschrift</h2>
           <p>Dies ist der Textbereich .</p>
           <p>hyperlinks nicht vergessen </p>
       </div>
 
+      <!-- Trenner / Dekoelement -->
       <div class="line-seperator">
         <p>
           

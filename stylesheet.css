@@ -4,15 +4,16 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
 }
 
-/* NAV Bar*/
+/* =========================================
+   Navigationsleiste
+========================================= */
 .topnav {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.063));
     overflow: hidden;
-    position: fixed; /* damit die Navi oben drauf sitzt */
+    position: fixed; 
     width: 100%;
     z-index: 10; /* wichtig, damit die Navi über den Bildern bleibt */
     align-items:center;
@@ -21,9 +22,8 @@
     background-repeat: no-repeat; /* Keine Wiederholung */
   }
 
-  /* Style the links inside the navigation bar */
+  /* Links in der Navigationsleiste */
   .topnav a {
-    
     float: left;
     display: block;
     color: #ffffff;
@@ -33,7 +33,7 @@
     font-size: 17px;
   }
   
-  /* Add an active class to highlight the current page */
+  /* Highlight on Hover bei Desktioansicht */
   .topnav a.active {
     background-color: #ff0084;
     color: white;
@@ -55,16 +55,17 @@
     display: none;
   } 
 
-  /* Standardmäßig verstecken */
+  /* Navigations-Logo (Standard versteckt)*/
   .nav-logo {
     display: none;
     color: #ffffff;
     font-family: "Playfair Display", serif;
     text-align: center; /* Damit beide Zeilen mittig stehen */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 
     line-height: 1.2;
     position: absolute;
-    top: 5px; /* GANZ hoch an den oberen Rand setzen */
+    top: 5px; /* Hoch an den oberen Rand setzen */
     left: 50%;
     transform: translateX(-50%);
 
@@ -90,9 +91,13 @@
     font-style: italic;
 }
 
-   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+/* =========================================
+   Responsive Navigation (Mobile Ansicht)
+========================================= */
 @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}/* a.icon = Burgermenu*/
+    .topnav a:not(:first-child) {
+      display: none;
+    }/* a.icon = Burgermenu*/
     .topnav a.icon {
       color: #ffffff;
       float: right;
@@ -102,11 +107,12 @@
       color: #ff0084;}
 
     .header-content {
-        display: none; /* Großer Text verschwindet */
+        display: none; 
     }
-
+    
+    /*Logo wird angezeigt */
     .nav-logo {
-        display: block; /* Logo wird angezeigt */
+        display: block; 
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -114,8 +120,7 @@
         font-weight: bold;
     }
   }
-  
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+
   @media screen and (max-width: 600px) {
     .topnav.responsive {
       position: relative; 
@@ -128,7 +133,7 @@
       top: 0;
     }
     
-    .topnav.responsive a:not(.active):not(.icon) { /*Menu links balck exept of Menu icon*/
+    .topnav.responsive a:not(.active):not(.icon) { 
       color: black;
     }
     .topnav.responsive a:hover:not(.active) {
@@ -149,14 +154,15 @@
     }
   } 
 
-
+/* =========================================
+   Header & Hintergrundbilder
+========================================= */
 header {
     position: relative;
-    min-height: 100vh; /* Mindesthöhe = Bildschirmhöhe */
+    min-height: 100vh; /* Gesammte Bildschirmhöhe */
     overflow: hidden; /* Verhindert Scrollen bei großen Bildern */
 
 }
-
 
 .background-grid {
     display: grid;
@@ -170,63 +176,40 @@ header {
     background: rgb(255, 255, 255); /* Fallback-Hintergrund (für Ladezeit) */
 }
 
-.content-box {
-  background: white;
+/* Bilderwrapper */
+.img-wrapper {
   position: relative;
-  margin: 0 auto;     /* zentrieren */
-  padding: 40px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* optional: Schatten */
-  color: black;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-style:none;
+  background-color: #ff008424;
+}
+  
+.img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;  /* Start als unsichtbar */
+  transform: scale(1.1);  /* Start mit leichtem Zoom */
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Sanfter Übergang für das Ein- und Ausblenden und Zoom */
 }
 
-@media (max-width: 600px) {
-  .content-box {
-      max-width: 100%;
-      padding: 20px;
-  }
+/* Bild aktiv sichtbar machen */
+img.active {
+  opacity: 1;  /* Bild sichtbar */
+  transform: scale(1);  /* Zoom wird entfernt */
 }
 
-
-.line-seperator{
-  background:  #ff00840b;
-  position: relative;
-  margin: 0 auto;     /* zentrieren */
-  padding: 40px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* optional: Schatten */
+img.fade-out {
+  opacity: 0;  /* Bild wird unsichtbar */
+  transform: scale(1.1);  /* Zoom bleibt erhalten */
 }
 
-  .img-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-style:none;
-    background-color: #ff008424;
-  }
-  
-  .img-wrapper img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0;  /* Start als unsichtbar */
-    transform: scale(1.1);  /* Start mit leichtem Zoom */
-    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Sanfter Übergang für das Ein- und Ausblenden und Zoom */
-  }
-  
-  img.active {
-    opacity: 1;  /* Bild sichtbar */
-    transform: scale(1);  /* Zoom wird entfernt */
-  }
-  
-  img.fade-out {
-    opacity: 0;  /* Bild wird unsichtbar */
-    transform: scale(1.1);  /* Zoom bleibt erhalten */
-  }
-  
- 
+ /* Overlay-Effekt (Für weichen Bildrand)*/
 .img-wrapper::after{
     content: '';
     position: absolute;
@@ -242,9 +225,7 @@ header {
     z-index: 1;
 }
 
-
-/* Hintergrund bei Mobile Ansicht */
-
+/* Responsive Hintergrundbild-Anordnung */
 @media (max-width: 768px) {
     .background-grid {
         grid-template-columns: 1fr; /* Eine Spalte = Bilder untereinander */
@@ -252,7 +233,9 @@ header {
     }
 }
 
-/*Header content*/
+/* =========================================
+   Header-Text (zentral)
+========================================= */
 .header-content {
     font-family: "Playfair Display", serif;
     margin: auto;
@@ -285,12 +268,12 @@ header {
 }
 
 
-/* Kleine Schrift für Header bei kleinem Bildschirm Handy/Tablets */
+/* Header auf kleineren Geräten */
 @media (max-width: 768px) {
 
     .header-content {
-        top: 20%; /* höher rutschen */
-        transform: translate(-50%, 0); /* NICHT mehr vertikal zentrieren nur horizontal */
+        top: 20%; 
+        transform: translate(-50%, 0); /* Horizontral zentriert */
         text-align: center;
         left: 50%;
         width: 100%;
@@ -298,7 +281,7 @@ header {
     }
 
     .header-content h1 {
-        font-size: 6vw; /* große, flexible Schrift */
+        font-size: 6vw; 
     }
 
     .header-content h2 {
@@ -306,19 +289,65 @@ header {
     }
 }
 
-/* Extra klein, Smartphones */
+
 @media (max-width: 500px) {
     .header-content {
-        top: 10%; /* Noch höher bei sehr kleinen Screens */
+        top: 10%; 
     }
 
     .header-content h1 {
-        font-size: 8vw; /* angepasst für Smartphone */
+        font-size: 8vw; 
     }
 
     .header-content h2 {
         font-size: 4vw;
     }
+}
+
+/* =========================================
+   Inhaltsbox (Textblock)
+========================================= */
+.content-box {
+  background: white;
+  position: relative;
+  margin: 0 auto;/* zentrieren */
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .content-box {
+      max-width: 100%;
+      padding: 20px;
+  }
+}
+
+/* =========================================
+   Bildanzeige je nach Gerätetyp
+========================================= */
+.line-seperator{
+  background:  #ff00840b;
+  position: relative;
+  margin: 0 auto;     /* zentrieren */
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+}
+
+.mobile {
+  display: none;
+}
+.desktop {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
 
 

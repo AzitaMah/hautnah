@@ -11,6 +11,9 @@
 :root {
   --primary-color: #ff0084;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* =========================================
    Navigationsleiste
@@ -349,6 +352,132 @@ img.fade-out {
   color: black;
 }
 
+.content-heading{
+  font-family: 'Playfair Display', serif; /* Elegante Schrift */
+  font-size: 2.1rem;
+  color:var(--primary-color);
+  text-align: center;
+  text-shadow: 1px 1px 3px #989898; /* Leichter Schatten */
+  letter-spacing: 1px; /* Buchstabenabstand */
+  margin-bottom: 1em;
+
+}
+
+.content-text{
+  margin-bottom: 4em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  font-size: large;
+}
+
+
+/* Container für die Icon-Reihe */
+.icon-row {
+  display: flex;
+  justify-content: center; /* Zentriert horizontal */
+  align-items: flex-start; /* Startet oben */
+  gap: 40px; /* Abstand zwischen den Icons */
+  flex-wrap: wrap; /* Falls Platz knapp wird */
+  margin: 0 auto;
+}
+
+/* Einzelnes Icon mit Text */
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriert den Inhalt */
+  max-width: 120px; /* Maximale Breite */
+  text-align: center;
+}
+
+.service-item {
+  flex: 1 1 300px; /* Gleichmäßige Aufteilung */
+  max-width: 320px; /* Maximalbreite */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+}
+
+/* Textcontainer mit fester Höhe */
+.text-container {
+  text-align: center;
+  width: 100%; /* statt height fixen */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 10px;
+  min-height: 180px;
+}
+
+/* Titel-Stil */
+.service-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin: 15px 0 10px;
+  text-align: center;
+}
+
+/* Beschreibungstext */
+.service-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+
+.plain {
+  position: relative;
+  width: 100px;
+}
+
+.plain img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f8f8f8;
+}
+
+.color-frame {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #6843ff, #ff5e5e);
+  transition: all 0.4s ease;
+}
+
+.color-frame img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.color-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 0, 132, 0.3);
+}
+
+.rounded-image {
+  width: 100px; /* Quadratisch halten */
+  height: 100px;
+  border-radius: 50%; /* Macht das Bild rund */
+  object-fit: cover; /* Verhindert Verzerrung */
+  border: 3px solid white; /* Weißer Rand */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtiler Schatten */
+  transition: all 0.3s ease;
+}
+
+.rounded-image:hover {
+  transform: scale(1.05); /* Leichte Zoom-Animation */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Schatten verstärkt */
+}
+
 /* ============ Aenderungen/Ergaenzungen Mobile Ansicht  ============ */
 
 @media (max-width: 600px) {
@@ -356,7 +485,22 @@ img.fade-out {
       max-width: 100%;
       padding: 20px;
   }
+  .content-heading{
+    font-family: 'Playfair Display', serif; /* Elegante Schrift */
+    font-size: 1.3rem;
+    color:var(--primary-color);
+    text-align: center;
+   text-shadow: 1px 1px 3px #989898; /* Leichter Schatten */
+    letter-spacing: 1px; /* Buchstabenabstand */
+  }
+  .content-text{
+    margin-bottom: 4em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: medium;
+  }
 }
+
 
 .line-seperator{
   background:  #ff00840b;

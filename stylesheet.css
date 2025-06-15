@@ -131,8 +131,7 @@ html {
   }
 
   @media screen and (max-width: 600px) {
-    .topnav.responsive {
-      position: relative; 
+    .topnav.responsive { 
       background: #ffffff;}
 
     .topnav.responsive a.icon { 
@@ -476,6 +475,49 @@ img.fade-out {
 .rounded-image:hover {
   transform: scale(1.05); /* Leichte Zoom-Animation */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Schatten verstärkt */
+}
+.ueber-uns, .auszeichnungen {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+.text-bild-block,
+.auszeichnung-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.text-bild-block .text,
+.auszeichnung-block .text {
+  flex: 1 1 300px;
+}
+
+.text-bild-block .bild img,
+.auszeichnung-block .bild img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.bild-quer img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.auszeichnung-block.reverse {
+  flex-direction: row-reverse;
 }
 
 /* ============ Aenderungen/Ergaenzungen Mobile Ansicht  ============ */

@@ -725,6 +725,8 @@ img.fade-out {
 .footer-column {
   flex: 1 1 220px;
   min-width: 180px;
+  padding-left: 12px;
+ padding-right: 12px;
 }
 
 .footer-column p {
@@ -769,7 +771,6 @@ img.fade-out {
   }
 
     .footer-container {
-    flex-direction: column;
     align-items: center;
     text-align: center;
   }
@@ -778,6 +779,7 @@ img.fade-out {
     width: 100%;
     margin-bottom: 20px;
   }
+  
 }
 
 

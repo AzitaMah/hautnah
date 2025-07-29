@@ -20,6 +20,8 @@ html {
    Navigationsleiste
 ========================================= */
 .topnav {
+  display: flex;
+    justify-content: space-between;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.063));
     overflow: hidden;
     position: fixed; 
@@ -30,6 +32,14 @@ html {
     background-size: 100% 60px; /* Hintergrund auf 60px festsetzen */
     background-repeat: no-repeat; /* Keine Wiederholung */
   }
+
+    .nav-links {
+  justify-content: flex-start;
+  gap: 10px;
+  flex-shrink: 1;
+  min-width: 0;
+  
+}
 
   /* Links in der Navigationsleiste */
   .topnav a {
@@ -66,12 +76,12 @@ html {
 
   /* Navigations-Logo (Standard versteckt)*/
   .nav-logo {
-    display: none;
+    text-align: center;
+    white-space: nowrap;
     color: #ffffff;
     font-family: "Playfair Display", serif;
     text-align: center; /* Damit beide Zeilen mittig stehen */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-
     line-height: 1.2;
     position: absolute;
     top: 5px; /* Hoch an den oberen Rand setzen */
@@ -104,7 +114,15 @@ html {
 
 /* ============ Aenderungen/Ergaenzungen Mobile Ansicht ============ */
 
-@media screen and (max-width: 600px) {
+@media (max-width: 1150px) and (min-width: 651px) {
+  .nav-logo {
+    left: auto;
+    right: 20px; /* Abstand zum rechten Rand */
+    transform: none; 
+   }
+}
+
+@media screen and (max-width: 650px) {
     .topnav a:not(:first-child) {
       display: none;
     }/* a.icon = Burgermenu*/
@@ -131,7 +149,7 @@ html {
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 650px) {
     .topnav.responsive { 
       background: #ffffff;}
 
@@ -191,7 +209,7 @@ header {
   height: 100%;
   overflow: hidden;
   border-style:none;
-  background-color: #ff008424;
+  background-color: #ffffff;
 }
   
 .img-wrapper img {
@@ -241,7 +259,7 @@ img.fade-out {
 }
 
 /* ============ Aenderungen/Ergaenzungen Mobile Ansicht  ============ */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   header {
     min-height:  calc(100vh - 60px); /* Navigation abziehen */
     height:  calc(100vh - 60px); /* Navigation abziehen */
@@ -698,8 +716,8 @@ img.fade-out {
 }
 
 .site-footer {
-  background-color: var(--primary-color, #b88d92);
-  color: white;
+  background-color: var(white, #b88d92);
+  color: rgb(0, 0, 0);
   padding: 40px 20px 60px;
   box-sizing: border-box;
   font-size: 0.95rem;
@@ -747,7 +765,7 @@ img.fade-out {
 
 /* ============ Aenderungen/Ergaenzungen Mobile Ansicht  ============ */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .content-box {
       max-width: 100%;
       padding: 20px;
@@ -782,14 +800,14 @@ img.fade-out {
   
 }
 
-
+/*
 .line-seperator{
   background:  #ff00840b;
   position: relative;
-  margin: 0 auto;     /* zentrieren */
+  margin: 0 auto;     
   padding: 40px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-}
+}*/
 
 /* =========================================
    Bildanzeige je nach Gerätetyp
@@ -801,7 +819,7 @@ img.fade-out {
   display: block;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .desktop {
     display: none;
   }

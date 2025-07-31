@@ -74,7 +74,7 @@ html {
     display: none;
   } 
 
-  /* Navigations-Logo (Standard versteckt)*/
+  /* Navigations-Logo*/
   .nav-logo {
     text-align: center;
     white-space: nowrap;
@@ -82,7 +82,7 @@ html {
     font-family: "Playfair Display", serif;
     text-align: center; /* Damit beide Zeilen mittig stehen */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    line-height: 1.2;
+    line-height: 1;
     position: absolute;
     top: 5px; /* Hoch an den oberen Rand setzen */
     left: 50%;
@@ -114,7 +114,7 @@ html {
 
 /* ============ Aenderungen/Ergaenzungen Mobile Ansicht ============ */
 
-@media (max-width: 1150px) and (min-width: 651px) {
+@media (max-width: 1300px) and (min-width: 651px) {
   .nav-logo {
     left: auto;
     right: 20px; /* Abstand zum rechten Rand */
@@ -537,40 +537,6 @@ img.fade-out {
   margin: 0;
 }
 
-
-.plain {
-  position: relative;
-  width: 100px;
-}
-
-.plain img {
-  width: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #f8f8f8;
-}
-
-.color-frame {
-  width: 100px;
-  height: 100px;
-  padding: 5px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #6843ff, #ff5e5e);
-  transition: all 0.4s ease;
-}
-
-.color-frame img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid white;
-}
-
-.color-frame:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 0, 132, 0.3);
-}
 
 .rounded-image {
   width: 100px; /* Quadratisch halten */
